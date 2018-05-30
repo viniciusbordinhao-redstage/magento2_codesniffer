@@ -7,15 +7,4 @@ php:
 - 7.0
 
 before_script:
-- bash .travis/codesniffer.sh
-
-language: php
-
-git:
-  depth: 1
-
-php:
-- 7.0
-
-before_script:
 - bash ./dev/travis/codesniffer.sh
