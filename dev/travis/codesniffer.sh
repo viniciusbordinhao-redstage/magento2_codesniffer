@@ -1,9 +1,7 @@
 #!/bin/bash
-composer global require "squizlabs/php_codesniffer=*"
-composer global require magento-ecg/coding-standard
-~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/magento-ecg/coding-standard
-~/.composer/vendor/bin/phpcs --standard=EcgM2 --extensions=php,phtml ./app/code/
-
-
-
-
+path=${pwd}
+git clone https://github.com/magento/marketplace-eqp.git ~/marketplace-eqp
+cd ~/marketplace-eqp && composer install
+cd $path
+pwd
+~/marketplace-eqp/vendor/bin/phpcs --standard=MEQP2 --severity=10  --extensions=php,phtml ./app/code/
